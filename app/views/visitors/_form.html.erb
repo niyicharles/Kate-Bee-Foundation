@@ -1,0 +1,12 @@
+<% form_for @visitor do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :direction %><br />
+    <%= f.text_field :direction %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

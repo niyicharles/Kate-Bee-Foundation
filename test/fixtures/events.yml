@@ -1,0 +1,15 @@
+one:
+  title: MyString
+  location: MyString
+  date_of_event: 2010-07-01 09:13:47
+  emphasis: MyString
+  author: MyString
+  information: MyText
+
+two:
+  title: MyString
+  location: MyString
+  date_of_event: 2010-07-01 09:13:47
+  emphasis: MyString
+  author: MyString
+  information: MyText

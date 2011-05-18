@@ -1,0 +1,19 @@
+<% title "Visitors" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Direction</th>
+  </tr>
+  <% for visitor in @visitors %>
+    <tr>
+      <td><%=h visitor.name %></td>
+      <td><%=h visitor.direction %></td>
+      <td><%= link_to "Show", visitor %></td>
+      <td><%= link_to "Edit", edit_visitor_path(visitor) %></td>
+      <td><%= link_to "Destroy", visitor, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Visitor", new_visitor_path %></p>

@@ -1,0 +1,36 @@
+<% form_for @sponsor do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.select "projectname", options_from_collection_for_select(@projects, "title", "title") %>
+  </p>
+  <p>
+    <%= f.label :firstname %><br />
+    <%= f.text_field :firstname %>
+  </p>
+  <p>
+    <%= f.label :lastname %><br />
+    <%= f.text_field :lastname %>
+  </p>
+  <p>
+    <%= f.label :othernames %><br />
+    <%= f.text_field :othernames %>
+  </p>
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :phone %><br />
+    <%= f.text_field :phone %>
+  </p>
+  <p>
+    <%= f.label :address %><br />
+    <%= f.text_area :address %>
+  </p>
+  <p><%= f.submit "Become A Sponsor" %></p>
+<% end %>
+

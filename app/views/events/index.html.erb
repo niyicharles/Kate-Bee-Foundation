@@ -1,0 +1,67 @@
+<% title "Events" %>
+
+<p></p>
+
+<% @events.each do |event| %>
+<div valign="top" class="<%= cycle('articles_div_odd', 'articles_div_even') %>">
+
+    <div class="articles_div_space">
+    </div><!-- end .articles_div_space -->
+
+  <div class="article_div_title"><%=h truncate(event.title.gsub(/<.*?>/,''), :length => 50) %></div>
+
+  <span class="articles_div_photo_holder">
+    <div class="articles_div_photo">
+      <%= link_to image_tag(event.photo.url(:snapshot)), event %>
+    </div><!-- end .articles_div_photo -->
+  </span><!-- end .articles_div_photo_holder -->
+
+  <span class="articles_div_gap_2">
+  </span><!-- end .articles_div_gap_2 -->
+
+  <span class="articles_div_details">
+
+    <div class="article_div_description"><%=h truncate(event.information.gsub(/<.*?>/,''), :length => 500) %></div>
+
+    <div class="articles_div_information_location_gap">
+    </div><!-- end .articles_div_information_location_gap -->
+
+    <div class="article_div_emphasis"><%=h truncate(event.emphasis.gsub(/<.*?>/,''), :length => 40) %></div>
+
+    <div class="last_location"><%=h truncate(event.location.gsub(/<.*?>/,''), :length => 40) %></div>
+
+    <div class="last_author"><%= event.author %></div>
+
+    <div class="last_date"><%= event.date_of_event %></div>
+
+    <div class="event_manage">
+
+  	  <span><%= link_to 'Show', event %></span>
+
+      <% if admin? %>
+        <span> | </span>
+        <span><%= link_to 'Edit', edit_event_path(event) %></span>
+        <span> | </span>
+        <span><%= link_to 'Destroy', event, :confirm => 'Are you sure?', :method => :delete %></span>
+      <% end %>
+
+    </div><!-- end .event_manage -->
+
+  </span><!-- end .articles_div_details -->
+
+</div><!-- end .articles_div_odd -->
+<% end %>
+
+<div class="articles_div_space">
+</div><!-- end .articles_div_space -->
+
+<div class="pagination">
+  <%= will_paginate @events %>
+</div><!-- end .pagination -->
+
+<% if admin? %>
+  <p class="return_link">
+  	<span><%= link_to 'New event', new_event_path %></span>
+  </p>
+<% end %>
+

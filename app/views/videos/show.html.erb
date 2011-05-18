@@ -1,0 +1,31 @@
+<% title "Video" %>
+
+<p></p>
+
+<h4><%=h @video.title %></h4>
+
+<div id="news_article_photo">
+  <div class="last_photo">
+
+  </div>
+
+  <div id="news_article_photo_tag">
+    <b><%=h @video.location %></b><br />
+    <%=h @video.emphasis %><br /><br />
+    <%=h @video.date_of_event %><br /><br />
+    <%=  @video.embed %><br /><br />
+  </div>
+</div>
+
+<%= @video.information %>
+
+<p class="return_link">
+  <% if admin? %>
+    <span><%= link_to 'Edit', edit_video_path(@video) %></span>
+    <span> | </span>
+    <span><%= link_to "Destroy", @video, :confirm => 'Are you sure?', :method => :delete %></span>
+    <span> | </span>
+  <% end %>
+  <span><%= link_to 'View All', videos_path %></span>
+</p>
+

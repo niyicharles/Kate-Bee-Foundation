@@ -1,0 +1,296 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title><%= h(yield(:title) || "Untitled") %></title>
+    <%= stylesheet_link_tag 'site' %>
+    <%= yield(:head) %>
+  </head>
+
+<body>
+
+<div id="warning">Hosted on June 11th, 2010 for testing of KateBeeFoundation
+<!-- end #warning --></div>
+
+<div id="header">
+
+  <div id="header_image_holder">
+
+    <span id="header_span1">
+    <!-- end #header_span1 --></span>
+
+    <span id="header_span2">
+    <!-- end #header_span2 --></span>
+
+  <!-- end #header_image_holder --></div>
+
+<!-- end #header --></div>
+
+  <div id="header_nav_gap_holder">
+
+    <span id="header_nav_gap_span1">
+    <!-- end header_nav_gap_span1 --></span>
+
+    <span id="header_nav_gap_span2">
+    <!-- end header_nav_gap_span2 --></span>
+
+    <span id="header_nav_gap_span3">
+    <!-- end header_nav_gap_span3 --></span>
+
+  <!-- end #header_nav_gap_holder --></div>
+
+
+<div id="navigator_holder">
+
+  <div id="navigator">
+      <span id="left_navigator">
+      <!-- end #left_navigator --></span>
+        <span class="button"><%= link_to_unless_current 'Home', home_path %>
+      <!-- end .button --></span>
+        <span class="button"><%= link_to_unless_current 'Videos', videos_path %>
+      <!-- end .button --></span>
+        <span class="button"><%= link_to_unless_current 'About', about_path %>
+      <!-- end .button --></span>
+        <span class="button"><%= link_to_unless_current 'Gallery', galleries_path %>
+      <!-- end .button --></span>
+        <span class="button"><%= link_to_unless_current 'What We Do', services_path %>
+      <!-- end .button --></span>
+        <span class="button"><%= link_to_unless_current 'Articles', articles_path %>
+      <!-- end .button --></span>
+        <span class="button"><%= link_to_unless_current 'Events', events_path %>
+      <!-- end .button --></span>
+        <span class="button"><%= link_to_unless_current 'Contact Us', contact_path %>
+      <!-- end .button --></span>
+      <span id="right_navigator">
+      <!-- end #right_navigator --></span>
+  <!-- end #navigator --></div>
+
+<!-- end #navigator_holder --></div>
+
+<div id="title_div_holder">
+
+    <span id="title_span1">
+    <!-- end title_span1 --></span>
+
+    <span id="title_span2">
+      <span id="title_span2_span1">
+        <%- if show_title? -%>
+          <%=h yield(:title) %>
+        <%- end -%>
+      <!-- end #title_span2_span1 --></span>
+
+      <span id="title_span2_span2">
+        <span id="login">
+        <!-- end #login --></span>
+
+        <% if admin? %>
+          <span id="logout">
+            <%= link_to 'Logout', logout_path %>
+          <!-- end #logout --></span>
+        <% end %>
+      <!-- end #title_span2_span2 --></span>
+    <!-- end title_span2 --></span>
+
+<!-- end #title_div_holder --></div>
+
+<div id="flash_container">
+
+  <div id="flash_board">
+
+    <%- flash.each do |name, msg| -%>
+      <%= content_tag :div, msg, :id => "flash_#{name}" %>
+    <%- end -%>
+
+  <!-- end #flash_board --></div>
+
+<!-- end #flash_container --></div>
+
+<div id="container">
+
+  <!-- FIRST CONTENT FOLAYOUTR  -->
+
+  <div id="container_div">
+    <div id="content_for_layout_1">
+
+      <span id="content_for_layout_1_span">
+      <!-- end #content_for_layout_1_span --></span>
+
+      <span id="content_for_layout_1_flash">
+      <!-- end #content_for_layout_1_flash --></span>
+
+      <span id="content_for_layout_1_buttons">
+
+        <div id="index_who_button"><%= link_to image_tag( "who_we_are_normal_button.jpg", :mouseover => "/images/who_we_are_highlight_button.jpg" ), about_path %>
+        <!-- end #index_who_button --></div>
+        <div id="index_where_button"><%= link_to image_tag( "where_we_are_normal_button.jpg", :mouseover => "/images/where_we_are_highlight_button.jpg" ), activities_path %>
+        <!-- end #index_where_button --></div>
+        <div id="index_what_button"><%= link_to image_tag( "what_we_do_normal_button.jpg", :mouseover => "/images/what_we_do_highlight_button.jpg" ), strategy_path %>
+        <!-- end #index_what_button --></div>
+        <div id="index_sponsor_button"><%= link_to image_tag( "become_a_sponsor_normal_button.jpg", :mouseover => "/images/become_a_sponsor_highlight_button.jpg" ),
+                                                                                                    :controller => "sponsors", :action => "new" %>
+        <!-- end #index_sponsor_button --></div>
+
+      <!-- end #content_for_layout_1_buttons --></span>
+
+    <!-- end #content_for_layout_1 --></div>
+  <!-- end #container_div --></div>
+
+  <!-- FIRST CONTENT FOLAYOUTR  -->
+
+<!-- end #container --></div>
+
+
+<div id="view_title_content_gap_holder">
+
+  <span id="view_title_content_gap_span1">
+  <!-- end view_title_content_gap_span1 --></span>
+
+  <span id="view_title_content_gap_span2">
+  <!-- end view_title_content_gap_span2 --></span>
+
+  <span id="view_title_content_gap_span3">
+  <!-- end view_title_content_gap_span3 --></span>
+
+  <span id="view_title_content_gap_span4">
+  <!-- end view_title_content_gap_span4 --></span>
+
+<!-- end #view_title_content_gap_holder --></div>
+
+
+<div id="second_container">
+
+  <span id="news_container">
+
+    <span id="news_container_span1">
+    <!-- end #news_container_span1 --></span>
+
+    <span id="news_container_span2">
+
+      <div id="news_container_span2_div1">
+      <!-- end #news_container_span2_div1 --></div>
+
+      <% if @last_six_presses %>
+
+        <% for press in @last_six_presses %>
+
+          <div class="news_container_span2_news_div">
+
+            <div class="news_container_span2_news_div_content_div">
+
+              <div class="news_date"><%=h press.updated_at %>
+              <!-- end .news_date --></div>
+
+              <div class="news_header"><%=h truncate(press.title.gsub(/<.*?>/,''), :length => 70) %>
+              <!-- end .news_header --></div>
+
+              <div class="news_info">
+                <%=h truncate(press.information.gsub(/<.*?>/,''), :length => 270) %>
+              <!-- end .news_info --></div>
+
+              <div class="read_more_news"><%= link_to 'Read more', press %>
+              <!-- end .read_more_news --></div>
+
+            <!-- end .news_container_span2_news_div_content_div --></div>
+
+          <!-- end .news_container_span2_news_div --></div>
+
+        <% end %>
+
+      <% else %>
+
+      <% end %>
+
+      <div id="news_container_span2_div2">
+      <!-- end #news_container_span2_div2 --></div>
+
+    <!-- end #news_container_span2 --></span>
+
+  <!-- end #view_container_span1 --></span>
+
+  <span id="view_container_span2">
+
+    <div id="view_container_span2_div1">
+
+			<!-- SECOND CONTENT FOR LAYOUT -->
+
+      <div id="view_container_span2_div1_home_content"><%= yield %>
+      <!-- end #view_container_span2_div1_home_content --></div>
+
+			<!-- SECOND CONTENT FOR LAYOUT -->
+
+    <!-- end #view_container_span2_div1 --></div>
+
+    <div id="view_container_span2_div2">
+
+      <span id="view_container_span2_div2_span1">
+      <!-- end view_container_span2_div2_span1 --></span>
+
+      <span id="view_container_span2_div2_span2">
+      <!-- end view_container_span2_div2_span2 --></span>
+
+      <span id="view_container_span2_div2_span3">
+      <!-- end view_container_span2_div2_span3 --></span>
+
+    <!-- end #view_container_span2_div2 --></div>
+
+  <!-- end #view_container_span2 --></span>
+
+<!-- end #second_container --></div>
+
+
+<div id="footer_seperator">
+<!-- end #footer_seperator --></div>
+
+
+<div id="footer">
+
+  <div id="footer_content">
+
+    <span id="footer_content_span1">katebeefoundation.org
+    <!-- end #footer_content_span1 --></span>
+
+    <span id="footer_content_span2">
+
+      <span class="bottom_navigation"><a href="index.html">Home</a>
+      <!-- end .button --></span>
+      <span class="bottom_navigation"> |
+      <!-- end .button --></span>
+      <span class="bottom_navigation"><a href="videos.html">Videos</a>
+      <!-- end .button --></span>
+      <span class="bottom_navigation"> |
+      <!-- end .button --></span>
+      <span class="bottom_navigation"><a href="portfolio.html">Portfolio</a>
+      <!-- end .button --></span>
+      <span class="bottom_navigation"> |
+      <!-- end .button --></span>
+      <span class="bottom_navigation"><a href="gallery.html">Gallery</a>
+      <!-- end .button --></span>
+      <span class="bottom_navigation"> |
+      <!-- end .button --></span>
+      <span class="bottom_navigation"><a href="services.html">Services</a>
+      <!-- end .button --></span>
+      <span class="bottom_navigation"> |
+      <!-- end .button --></span>
+      <span class="bottom_navigation"><a href="articles.html">Articles</a>
+      <!-- end .button --></span>
+      <span class="bottom_navigation"> |
+      <!-- end .button --></span>
+      <span class="bottom_navigation"><a href="events.html">Events</a>
+      <!-- end .button --></span>
+      <span class="bottom_navigation"> |
+      <!-- end .button --></span>
+      <span class="bottom_navigation"><a href="contact.html">Contact Us</a>
+      <!-- end .button --></span>
+
+    <!-- end #footer_content_span2--></span>
+
+  <!-- end #footer_content --></div>
+
+  <div id="footer_copyright">&copy; CMN INTL 2010. All rights reserved. Tel: 08033713038
+  <!-- end #footer_copyright --></div>
+
+<!-- end #footer --></div>
+
+</body>
+</html>
+

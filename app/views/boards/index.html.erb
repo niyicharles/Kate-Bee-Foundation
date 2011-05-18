@@ -1,0 +1,114 @@
+<% title "The Board Members of KateBeeFoundation" %>
+
+<p></p>
+
+ <p>
+  <div id="page_image_title_holder_board">
+  <!-- end #page_image_title_holder_board --></div>
+
+  <div id="page_image_holder_board">
+  <!-- end #page_image_holder_board --></div>
+
+  <div id="page_image_holder_footer_green">
+  <!-- end #page_image_holder_footer_green --></div>
+</p>
+
+<% if admin? %>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Othernames</th>
+    <th>Position</th>
+  </tr>
+  <% for board in @boards %>
+    <tr>
+      <td><%=h board.title %></td>
+      <td><%=h board.firstname %></td>
+      <td><%=h board.lastname %></td>
+      <td><%=h board.othernames %></td>
+      <td><%=h board.position %></td>
+      <td><%= link_to "Show", board %></td>
+      <td><%= link_to "Edit", edit_board_path(board) %></td>
+      <td><%= link_to "Destroy", board, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Board", new_board_path %></p>
+
+<% end %>
+
+<div id="board_table">
+
+  <div id="board_header_1">
+
+    <span id="board_name_holder">
+
+      <div class="board_one_px_h">
+      <!-- end .board_one_px_h --></div>
+
+      <div id="board_name">Board Member's Name
+      <!-- end #board_name --></div>
+
+    <!-- end #board_name_holder --></span>
+
+    <span class="board_one_px_r">
+    <!-- end .board_one_px_r --></span>
+
+    <span id="board_position_holder">
+
+      <span class="board_one_px_r">
+      <!-- end .board_one_px_r --></span>
+
+      <div class="board_one_px_h">
+      <!-- end .board_one_px_h --></div>
+
+      <div id="board_position">Position
+      <!-- end #board_position --></div>
+
+    <!-- end #board_position_holder --></span>
+
+  <!-- end #board_header_1 --></div>
+
+  <% for board in @boards %>
+
+    <div class="board_one_px_h">
+    <!-- end .board_one_px_h --></div>
+
+    <div id="board_row">
+
+      <span id="board_row_name_holder">
+
+        <div class="board_one_px_h">
+        <!-- end .board_one_px_h --></div>
+
+        <div id="board_row_name"><%=h board.title + " " + board.firstname + " " + board.lastname + " " + board.othernames + " " %>
+        <!-- end #board_row_name --></div>
+
+      <!-- end #board_name_holder --></span>
+
+      <span class="board_one_px_r">
+      <!-- end .board_one_px_r --></span>
+
+      <span id="board_row_position_holder">
+
+        <span class="board_one_px_r">
+        <!-- end .board_one_px_r --></span>
+
+        <div class="board_one_px_h">
+        <!-- end .board_one_px_h --></div>
+
+        <div id="board_row_position"><%=h board.position %>
+        <!-- end #board_row_position --></div>
+
+      <!-- end #board_position_holder --></span>
+
+    <!-- end #board_row --></div>
+
+  <% end %>
+
+<!-- end #board_table --></div>
+

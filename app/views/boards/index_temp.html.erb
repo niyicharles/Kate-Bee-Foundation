@@ -1,0 +1,99 @@
+<% title "Boards" %>
+
+<p></p>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Othernames</th>
+    <th>Position</th>
+  </tr>
+  <% for board in @boards %>
+    <tr>
+      <td><%=h board.title %></td>
+      <td><%=h board.firstname %></td>
+      <td><%=h board.lastname %></td>
+      <td><%=h board.othernames %></td>
+      <td><%=h board.position %></td>
+      <td><%= link_to "Show", board %></td>
+      <td><%= link_to "Edit", edit_board_path(board) %></td>
+      <td><%= link_to "Destroy", board, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Board", new_board_path %></p>
+
+
+<div id="board_table">
+
+  <div id="board_header">
+
+    <div class="board_one_px_h">
+    <!-- end .board_one_px_h --></div>
+
+    <div id="board_header_row">
+
+      <span class="board_one_px_r">
+      <!-- end .board_one_px_r --></span>
+
+      <span id="board_name">
+      <!-- end #board_name --></span>
+
+      <span class="board_one_px_r">
+      <!-- end .board_one_px_r --></span>
+
+      <span id="board_position">
+      <!-- end #board_position --></span>
+
+    <!-- end #board_header_row --></div>
+
+  <!-- end #board_header --></div>
+
+  <div class="board_one_px_h">
+  <!-- end .board_one_px_h --></div>
+
+  <div id="board_header">
+
+    <div class="board_one_px_h">
+    <!-- end .board_one_px_h --></div>
+
+    <div id="board_header_row">
+
+      <span class="board_one_px_r">
+      <!-- end .board_one_px_r --></span>
+
+      <span id="board_name">
+      <!-- end #board_name --></span>
+
+      <span class="board_one_px_r">
+      <!-- end .board_one_px_r --></span>
+
+      <span id="board_position">
+      <!-- end #board_position --></span>
+
+    <!-- end #board_header_row --></div>
+
+  <!-- end #board_header --></div>
+
+<!-- end #board_table --></div>
+
+
+
+<div id="board_table">
+
+  <div id="board_header_1">
+
+    <span id="board_name_holder">
+
+      <span id="board_name">
+      <!-- end #board_name --></span>
+
+    <!-- end #board_name_holder --></span>
+
+  <!-- end #board_header_1 --></div>
+
+<!-- end #board_table --></div>
+

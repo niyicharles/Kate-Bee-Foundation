@@ -1,0 +1,24 @@
+<% title "Board" %>
+
+<p>
+  <strong>Firstname:</strong>
+  <%=h @board.firstname %>
+</p>
+<p>
+  <strong>Lastname:</strong>
+  <%=h @board.lastname %>
+</p>
+<p>
+  <strong>Othernames:</strong>
+  <%=h @board.othernames %>
+</p>
+<p>
+  <strong>Position:</strong>
+  <%=h @board.position %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_board_path(@board) %> |
+  <%= link_to "Destroy", @board, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", boards_path %>
+</p>

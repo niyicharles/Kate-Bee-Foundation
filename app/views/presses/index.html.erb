@@ -1,0 +1,64 @@
+<% title "Press" %>
+
+<p></p>
+
+<% @presses.each do |press| %>
+<div valign="top" class="<%= cycle('articles_div_odd', 'articles_div_even') %>">
+
+  <span class="articles_div_gap_2">
+  </span><!-- end .articles_div_gap_2 -->
+
+  <span class="articles_div_photo_holder">
+    <div class="articles_div_photo">
+
+    </div><!-- end .articles_div_photo -->
+  </span><!-- end .articles_div_photo_holder -->
+
+  <span class="articles_div_gap_1">
+  </span><!-- end .articles_div_gap_1 -->
+
+  <span class="articles_div_gap_2">
+  </span><!-- end .articles_div_gap_2 -->
+
+  <span class="articles_div_details">
+    <div class="last_title"><%=h truncate(press.title.gsub(/<.*?>/,''), :length => 40) %></div>
+
+    <div class="last_location"><%=h truncate(press.location.gsub(/<.*?>/,''), :length => 40) %></div>
+
+    <div class="last_emphasis"><%=h truncate(press.emphasis.gsub(/<.*?>/,''), :length => 40) %></div>
+
+    <div class="last_description"><%=h truncate(press.information.gsub(/<.*?>/,''), :length => 320) %></div>
+
+    <div class="last_author"><%= press.author %></div>
+
+    <div class="last_date"><%= press.date_of_event %></div>
+
+    <div class="event_manage">
+
+  	  <span><%= link_to 'Show', press %></span>
+
+      <% if admin? %>
+        <span> | </span>
+        <span><%= link_to 'Edit', edit_press_path(press) %></span>
+        <span> | </span>
+        <span><%= link_to 'Destroy', press, :confirm => 'Are you sure?', :method => :delete %></span>
+      <% end %>
+
+    </div><!-- end .event_manage -->
+
+  </span><!-- end .articles_div_details -->
+
+</div><!-- end .articles_div_odd -->
+<% end %>
+
+<div class="pagination">
+  <%= will_paginate @articles %>
+</div><!-- end .pagination -->
+
+
+<% if admin? %>
+  <p class="return_link">
+  	<span><%= link_to 'New press', new_press_path %></span>
+  </p>
+<% end %>
+

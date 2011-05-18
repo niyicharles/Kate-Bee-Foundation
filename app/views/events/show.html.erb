@@ -1,0 +1,31 @@
+<% title "Events" %>
+
+<p></p>
+
+<h4><%=h @event.title %></h4>
+
+<div id="news_article_photo">
+  <div class="last_photo">
+
+  </div>
+
+  <div id="news_article_photo_tag">
+    <b><%=h @event.location %></b><br />
+    <%=h @event.emphasis %><br /><br />
+    <%=h @event.date_of_event %><br /><br />
+    <%=h @event.author %><br /><br />
+  </div>
+</div>
+
+<%= @event.information %>
+
+<p class="return_link">
+  <% if admin? %>
+    <span><%= link_to 'Edit', edit_event_path(@event) %></span>
+    <span> | </span>
+    <span><%= link_to "Destroy", @event, :confirm => 'Are you sure?', :method => :delete %></span>
+    <span> | </span>
+  <% end %>
+  <span><%= link_to 'View All', events_path %></span>
+</p>
+

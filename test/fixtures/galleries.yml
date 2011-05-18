@@ -1,0 +1,11 @@
+one:
+  title: MyString
+  location: MyString
+  date_of_event: 2010-07-01 09:15:37
+  photographer: MyString
+
+two:
+  title: MyString
+  location: MyString
+  date_of_event: 2010-07-01 09:15:37
+  photographer: MyString

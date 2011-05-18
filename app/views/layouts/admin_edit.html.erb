@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title><%= h(yield(:title) || "Untitled") %></title>
+    <%= stylesheet_link_tag 'site' %>
+    <%= yield(:head) %>
+  </head>
+
+<body>
+
+<div id="header">
+
+  <div id="header_image_holder">
+
+    <span id="header_span1">
+    <!-- end #header_span1 --></span>
+
+    <span id="header_span2">
+    <!-- end #header_span2 --></span>
+
+  <!-- end #header_image_holder --></div>
+
+<!-- end #header --></div>
+
+  <div id="header_nav_gap_holder">
+
+    <span id="header_nav_gap_span1">
+    <!-- end header_nav_gap_span1 --></span>
+
+    <span id="header_nav_gap_span2">
+    <!-- end header_nav_gap_span2 --></span>
+
+    <span id="header_nav_gap_span3">
+    <!-- end header_nav_gap_span3 --></span>
+
+  <!-- end #header_nav_gap_holder --></div>
+
+
+<div id="navigator_holder">
+
+  <div id="navigator">
+      <span id="left_navigator">
+      <!-- end #left_navigator --></span>
+        <span class="button"><%= link_to_unless_current 'Home', home_path %>
+      <!-- end .button --></span>
+        <span class="button"><%= link_to_unless_current 'Videos', videos_path %>
+      <!-- end .button --></span>
+        <span class="button"><%= link_to_unless_current 'About', about_path %>
+      <!-- end .button --></span>
+        <span class="button"><%= link_to_unless_current 'Gallery', galleries_path %>
+      <!-- end .button --></span>
+        <span class="button"><%= link_to_unless_current 'Services', services_path %>
+      <!-- end .button --></span>
+        <span class="button"><%= link_to_unless_current 'Articles', articles_path %>
+      <!-- end .button --></span>
+      <span class="button"><%= link_to_unless_current 'Events', events_path %>
+      <!-- end .button --></span>
+        <span class="button"><%= link_to_unless_current 'Contact Us', contact_path %>
+      <!-- end .button --></span>
+      <span id="right_navigator">
+      <!-- end #right_navigator --></span>
+  <!-- end #navigator --></div>
+
+<!-- end #navigator_holder --></div>
+
+<div id="title_div_holder">
+
+    <span id="title_span1">
+    <!-- end title_span1 --></span>
+
+    <span id="title_span2">
+      <%- if show_title? -%>
+        <%=h yield(:title) %>
+      <%- end -%>
+    <!-- end title_span2 --></span>
+
+<!-- end #title_div_holder --></div>
+
+<div id="flash_container">
+
+  <div id="flash_board">
+
+    <%- flash.each do |name, msg| -%>
+      <%= content_tag :div, msg, :id => "flash_#{name}" %>
+    <%- end -%>
+
+  <!-- end #flash_board --></div>
+
+<!-- end #flash_container --></div>
+
+<div id="container">
+
+  <div id="container_div">
+
+    <div id="content"><%= yield %>
+		<!-- end #content --></div>
+
+  <!-- end #container_div --></div>
+
+<!-- end #container --></div>
+
+<div id="content_base_holder">
+
+  <span id="content_base_span1">
+  <!-- end #content_base_span1 --></span>
+
+  <span id="content_base_span2">
+  <!-- end #content_base_span2 --></span>
+
+  <span id="content_base_span3">
+  <!-- end #content_base_span3 --></span>
+
+<!-- end #content_base_holder --></div>
+
+<div id="footer_seperator">
+<!-- end #footer_seperator --></div>
+
+<div id="footer">
+
+  <div id="footer_content">
+
+    <span id="footer_content_span1">katebeefoundation.org
+    <!-- end #footer_content_span1 --></span>
+
+    <span id="footer_content_span2">
+
+      <span class="bottom_navigation"><a href="index.html">Home</a>
+      <!-- end .button --></span>
+      <span class="bottom_navigation"> |
+      <!-- end .button --></span>
+      <span class="bottom_navigation"><a href="videos.html">Videos</a>
+      <!-- end .button --></span>
+      <span class="bottom_navigation"> |
+      <!-- end .button --></span>
+      <span class="bottom_navigation"><a href="portfolio.html">Portfolio</a>
+      <!-- end .button --></span>
+      <span class="bottom_navigation"> |
+      <!-- end .button --></span>
+      <span class="bottom_navigation"><a href="gallery.html">Gallery</a>
+      <!-- end .button --></span>
+      <span class="bottom_navigation"> |
+      <!-- end .button --></span>
+      <span class="bottom_navigation"><a href="services.html">Services</a>
+      <!-- end .button --></span>
+      <span class="bottom_navigation"> |
+      <!-- end .button --></span>
+      <span class="bottom_navigation"><a href="events.html">Events</a>
+      <!-- end .button --></span>
+      <span class="bottom_navigation"> |
+      <!-- end .button --></span>
+      <span class="bottom_navigation"><a href="contact.html">Contact Us</a>
+      <!-- end .button --></span>
+
+    <!-- end #footer_content_span2--></span>
+
+  <!-- end #footer_content --></div>
+
+  <div id="footer_copyright">&copy; CMN INTL 2010. All rights reserved. Tel: 08033713038
+  <!-- end #footer_copyright --></div>
+
+<!-- end #footer --></div>
+
+</body>
+</html>
+

@@ -1,0 +1,20 @@
+<% form_for @board do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :firstname %><br />
+    <%= f.text_field :firstname %>
+  </p>
+  <p>
+    <%= f.label :lastname %><br />
+    <%= f.text_field :lastname %>
+  </p>
+  <p>
+    <%= f.label :othernames %><br />
+    <%= f.text_field :othernames %>
+  </p>
+  <p>
+    <%= f.label :position %><br />
+    <%= f.text_field :position %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

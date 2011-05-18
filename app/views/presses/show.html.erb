@@ -1,0 +1,31 @@
+<% title "Press" %>
+
+<p></p>
+
+<h4><%=h @press.title %></h4>
+
+<div id="news_article_photo">
+  <div class="last_photo">
+
+  </div>
+
+  <div id="news_article_photo_tag">
+    <b><%=h @press.location %></b><br />
+    <%=h @press.emphasis %><br /><br />
+    <%=h @press.date_of_event %><br /><br />
+    <%=h @press.author %><br /><br />
+  </div>
+</div>
+
+<%= @press.information %>
+
+<p class="return_link">
+  <% if admin? %>
+    <span><%= link_to 'Edit', edit_press_path(@press) %></span>
+    <span> | </span>
+    <span><%= link_to "Destroy", @press, :confirm => 'Are you sure?', :method => :delete %></span>
+    <span> | </span>
+  <% end %>
+  <span><%= link_to 'View All', presses_path %></span>
+</p>
+

@@ -1,0 +1,20 @@
+one:
+  firstname: MyString
+  lastname: MyString
+  othernames: MyString
+  title: MyString
+  email: MyString
+  phone: MyString
+  address: MyText
+  projectname: MyString
+
+two:
+  firstname: MyString
+  lastname: MyString
+  othernames: MyString
+  title: MyString
+  email: MyString
+  phone: MyString
+  address: MyText
+  projectname: MyString
+

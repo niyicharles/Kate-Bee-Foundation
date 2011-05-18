@@ -1,0 +1,60 @@
+<% title "Sponsors" %>
+
+<p></p>
+
+<div id="mini_navigation">
+
+  <% for visitor in @visitors %>
+    <%= link_to visitor.name, visitor.name %>
+  <% end %>
+
+<!-- end #mini_navigation --></div>
+
+<div id="mini_navigation_gap">
+<!-- end #mini_navigation_gap --></div>
+
+<% @sponsors.each do |sponsor| %>
+<div valign="top" class="<%= cycle('articles_div_odd', 'articles_div_even') %>">
+
+    <div class="articles_div_space">
+    </div><!-- end .articles_div_space -->
+
+  <div class="article_div_title"><%=h sponsor.title.capitalize + " " + sponsor.firstname.capitalize + " " + sponsor.othernames.capitalize + " " + sponsor.lastname.capitalize %></div>
+
+  <div class="article_div_address"><span class="event_manage">Address:</span><%=h truncate(sponsor.address.gsub(/<.*?>/,''), :length => 500) %></div>
+
+  <div class="article_div_address"><span class="event_manage">Phone:</span><%=h sponsor.phone %></div>
+
+  <div class="article_div_address"><span class="event_manage">Email:</span><%=h sponsor.email %></div>
+
+  <div class="article_div_address"><span class="event_manage">Interest:</span><%=h " " + sponsor.projectname %></div><br />
+
+    <div class="event_manage">
+
+  	  <span><%= link_to 'Show', sponsor %></span>
+
+      <% if admin? %>
+        <span> | </span>
+        <span><%= link_to 'Edit', edit_sponsor_path(sponsor) %></span>
+        <span> | </span>
+        <span><%= link_to 'Destroy', sponsor, :confirm => 'Are you sure?', :method => :delete %></span>
+      <% end %>
+
+    </div><!-- end .event_manage -->
+
+</div><!-- end .articles_div_odd -->
+<% end %>
+
+<div class="articles_div_space">
+</div><!-- end .articles_div_space -->
+
+<div class="pagination">
+  <%= will_paginate @sponsors %>
+</div><!-- end .pagination -->
+
+<% if admin? %>
+  <p class="return_link">
+  	<span><%= link_to 'New sponsor', new_sponsor_path %></span>
+  </p>
+<% end %>
+

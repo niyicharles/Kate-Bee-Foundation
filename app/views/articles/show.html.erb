@@ -1,0 +1,31 @@
+<% title "Article" %>
+
+<p></p>
+
+<h4><%=h @article.title %></h4>
+
+<div id="news_article_photo">
+  <div class="last_photo">
+    <%= image_tag @article.photo.url(:preview) %>
+  </div>
+
+  <div id="news_article_photo_tag">
+    <b><%=h @article.location %></b><br />
+    <%=h @article.emphasis %><br /><br />
+    <%=h @article.date_of_event %><br /><br />
+    <%=h @article.author %><br /><br />
+  </div>
+</div>
+
+<%= @article.information %>
+
+<p class="return_link">
+  <% if admin? %>
+    <span><%= link_to 'Edit', edit_article_path(@article) %></span>
+    <span> | </span>
+    <span><%= link_to "Destroy", @article, :confirm => 'Are you sure?', :method => :delete %></span>
+    <span> | </span>
+  <% end %>
+  <span><%= link_to 'View All', articles_path %></span>
+</p>
+
