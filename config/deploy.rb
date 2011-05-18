@@ -12,7 +12,7 @@ set :password, "3digital"
 
 # GIT information
 default_run_options[:pty] = true
-set :repository, "git@github.com:admindexter/katebeefoundation.git"
+set :repository, "git@github.com:niyicharles/Kate-Bee-Foundation.git"
 
 set :scm, "git"
 set :branch, "master"
